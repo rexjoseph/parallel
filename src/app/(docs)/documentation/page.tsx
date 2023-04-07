@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'Open source'
 }
 const page: FC = ({}) => {
-  return <div className="container max-w-7xl mx-auto mt-12">
+  return <div className="container max-w-6xl mx-auto mt-12">
     <div className="flex flex-col items-center gap-6">
       <Heading>Making a request</Heading>
       <Paragraph>api/v1/parallel</Paragraph>

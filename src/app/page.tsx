@@ -12,15 +12,15 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="relative h-screen flex items-center justify-center overflow-x-hidden">
-      <div className="container pt-32 max-w-7xl mx-auto w-full h-full">
+      <div className="container pt-32 max-w-6xl mx-auto w-full h-full">
           <div className="h-full gap-6 flex flex-col justify-start lg:justify-center items-center lg:items-start">
             <div>
               <Heading size="lg" className='text-black dark:text-light'>
-                Determine <br /> text similarity within seconds
+                Determine <br /> text parallel within seconds
               </Heading>
 
               <Paragraph className="max-w-xl lg:text-left">
-                With the text similarity API, you can easily determine the similarity between two phrases with a free {' '}
+                With the text parallel API, you can easily determine the parallel between two phrases with a free {' '}
                 <Link href="/login" className="underline underline-offset-2 text-black dark:text-light">API key</Link>.
               </Paragraph>
             </div>
