@@ -16,16 +16,16 @@ export default function RootLayout({
     <html lang="en" className={cn(
     'bg-white text-slate-900 antialiased', rubik.className
     )}>
-      <body className='min-h-screen bg-white dark:bg-black antialiased'>
+      <body className='min-h-screen bg-white dark:bg-dark antialiased'>
         <Providers>
           {/* @ts-expect-error Server Component */}
           <Navbar />
           <Toaster position="bottom-right" />
-          <main>{children}</main>
+          <main className="relative w-full hero-section">{children}</main>
         </Providers>
 
         {/* Add height on mobile */}
-        <div className='h-40 md:hidden' />
+        {/* <div className='h-40 md:hidden' /> */}
       </body>
     </html>
   )

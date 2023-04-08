@@ -3,8 +3,8 @@ const options = {
     method: 'POST',
     url: 'https://parallel.com/api/v1/parallel',
     params: {
-      text1: 'First text',
-      text2: 'Second text'
+      sample1: 'Draft me a legal subpeona for 1 760 935 5809. Ask for call logs on April 1 2023 and recordings if possible',
+      sample2: 'Lookup the ISP provider for 1 760 935 5809 then draft a subpeona requesting for logs'
     },
     headers: {
       'Authorization': 'YOUR_API_KEY',
@@ -20,14 +20,14 @@ axios.request(options).then(function (response) {
 export const python = `import requests
 url = 'https://parallel.com/api/v1/parallel'
 api_key = 'YOUR_API_KEY'
-text1 = 'First text'
-text2 = 'Second text'
+sample1 = 'Draft me a legal subpeona for 1 760 935 5809. Ask for call logs on April 1 2023 and recordings if possible'
+sample2 = 'Lookup the ISP provider for 1 760 935 5809 then draft a subpeona requesting for logs'
 headers = {
     'Authorization': api_key
 }
 payload = {
-    'text1': text1,
-    'text2': text2
+    'sample1': sample1,
+    'sample2': sample2
 }
 response = requests.post(url, headers=headers, json=payload)
 if response.status_code == 200:

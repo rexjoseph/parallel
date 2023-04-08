@@ -6,8 +6,8 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
 const reqSchema = z.object({
-  sample1: z.string().max(1000),
-  sample2: z.string().max(1000),
+  sample1: z.string().max(1100),
+  sample2: z.string().max(1100),
 });
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {

@@ -19,7 +19,7 @@ const page = async () => {
     where: { userId: currentUser.user.id, enabled: true },
   });
   return (
-    <div className="max-w-6xl mx-auto mt-16">
+    <div className="max-w-5xl mx-auto mt-16">
       {apiKey ? (
         // @ts-expect-error Server Component
         <ApiDashboard />
