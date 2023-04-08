@@ -1,4 +1,3 @@
-import { FC } from "react";
 import type { Metadata } from "next";
 import { authOptions } from "@/lib/auth";
 import { getServerSession } from "next-auth";
@@ -9,7 +8,7 @@ import ApiDashboard from "@/components/ApiDashboard";
 
 export const metadata: Metadata = {
   title: "Dashboard",
-  description: "",
+  description: "Open source",
 };
 
 const page = async () => {

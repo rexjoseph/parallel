@@ -1,5 +1,5 @@
 import '@/styles/globals.css'
-import { Inter, Rubik, Spectral } from 'next/font/google'
+import { Rubik } from 'next/font/google'
 import { cn } from '@/lib/utils'
 import Providers from '@/components/Providers'
 import Navbar from '@/components/Navbar'
@@ -18,12 +18,10 @@ export default function RootLayout({
     )}>
       <body className='min-h-screen bg-white dark:bg-black antialiased'>
         <Providers>
-          {children}
-
-          <Toaster position="bottom-right" />
-        
-        {/* @ts-expect-error Server Component */}
+          {/* @ts-expect-error Server Component */}
           <Navbar />
+          <Toaster position="bottom-right" />
+          <main>{children}</main>
         </Providers>
 
         {/* Add height on mobile */}

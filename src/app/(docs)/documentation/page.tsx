@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Documentation',
   description: 'Open source'
 }
-const page: FC = ({}) => {
+const page: FC = () => {
   return <div className="container max-w-6xl mx-auto mt-12">
     <div className="flex flex-col items-center gap-6">
       <Heading>Making a request</Heading>

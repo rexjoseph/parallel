@@ -1,8 +1,8 @@
 import { getServerSession } from "next-auth";
 import Link from "next/link";
-import SignInButton from "@/components/SignInButton";
+import SignInButton from "@/components/ui/SignInButton";
 import { buttonVariants } from "@/ui/Button";
-import SignOutButton from "@/components/SignOutButton";
+import SignOutButton from "@/components/ui/SignOutButton";
 import ThemeToggle from "./ThemeToggle";
 import { authOptions } from "@/lib/auth";
 
