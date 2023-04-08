@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: ''
 }
 
-const page =async () => {
+const page = async () => {
   const currentUser = await getServerSession(authOptions);
   if (!currentUser) return notFound()
 
