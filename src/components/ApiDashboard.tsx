@@ -39,7 +39,7 @@ const ApiDashboard = async () => {
 
   return (
     <div className="container flex flex-col gap-6">
-      {<Heading>Hello, {user.user.name}</Heading>}
+      <Heading style={{textAlign: "left"}}>Hello, {user.user.name}</Heading>
       <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
         <Paragraph>Your API key:</Paragraph>
         <Input className="w-fit truncate" readOnly value={activeApiKey.key} />

@@ -68,7 +68,8 @@ const Table: FC<TableProps> = ({ userRequests }) => {
       <DataGrid
         style={{
           backgroundColor: applicationTheme === "light" ? "white" : "#000",
-          fontSize: "1rem",
+          fontSize: "14px",
+          fontFamily: "inherit"
         }}
         pageSizeOptions={[5]}
         disableRowSelectionOnClick

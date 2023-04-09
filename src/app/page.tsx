@@ -104,8 +104,8 @@ export default function Home() {
           </div>
           <div className="grid md:grid-cols-4 gap-x-8 gap-y-10 md:gap-0 text-left pt-6">
             <div>
-              <h3 className="text-2xl md:text-4xl font-medium mb-2">0</h3>
-              <p className="text-sm text-gray-400">trained parameters (training)</p>
+              <h3 className="text-2xl md:text-4xl font-medium mb-2">&gt; 170bn</h3>
+              <p className="text-sm text-gray-400">trained parameters</p>
             </div>
             <div>
              <h3 className="text-2xl md:text-4xl font-medium mb-2">Context</h3>

@@ -5,10 +5,11 @@ import { openai } from "@/lib/openai";
 import { NextApiRequest, NextApiResponse } from "next";
 import { z } from "zod";
 
+
 const reqSchema = z.object({
-  sample1: z.string().max(1100),
-  sample2: z.string().max(1100),
+  sample1: z.string().max(1000)
 });
+
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const body = req.body as unknown;
@@ -19,42 +20,51 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
-    const { sample1, sample2 } = reqSchema.parse(body);
-    const validApikey = await db.apiKey.findFirst({
+    const { sample1 } = reqSchema.parse(body);
+    const validApiKey = await db.apiKey.findFirst({
       where: {
         key: apiKey,
         enabled: true,
       },
-    });
-    if (!validApikey) {
-      return res.status(401).json({ error: "Unauthorized" });
-    }
-    const start = new Date()
-    const embeddings = await Promise.all(
-      [sample1, sample2].map(async (text) => {
-        const res = await openai.createEmbedding({
-          model: "text-embedding-ada-002",
-          input: text
-        })
-        return res.data.data[0].embedding
-      })
-    )
+    })
 
-    const parallel = cosineParallel(embeddings[0], embeddings[1])
+    if (!validApiKey) {
+      return res.status(401).json({ error: 'Unauthorized' })
+    }
+
+    const start = new Date()
+
+    const response = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: `${sample1}`,
+      temperature: 0.9,
+      max_tokens: 150,
+      top_p: 1,
+      frequency_penalty: 0.0,
+      presence_penalty: 0.6,
+    });
+
+    const data = response.data.choices[0].text
+    
+    // console.log('response', response.data.choices[0].text)
+    // return res.status(200).json(response.data.choices)
+
     const duration = new Date().getTime() - start.getTime()
 
-    // persist req
+    // Persist request
     await db.apiRequest.create({
       data: {
         duration,
         method: req.method as string,
         path: req.url as string,
         status: 200,
-        apiKeyId: validApikey.id,
-        usedApiKey: validApikey.key
-      }
+        apiKeyId: validApiKey.id,
+        usedApiKey: validApiKey.key,
+      },
     })
-    return res.status(200).json({success: true, sample1, sample2, parallel})
+
+    return res.status(200).json({ success: true, data })
+
   } catch (err) {
     if (err instanceof z.ZodError) {
       return res.status(400).json({ error: err.issues });
