@@ -25,7 +25,7 @@ export default function Home() {
         </Heading>
 
         <Paragraph className="max-w-lg text-left md:text-center mt-4 text-base font-medium text-gray-400 md:text-xl">
-          With the parallel API, you can easily draft subpeonas easily with an{" "}
+          With the parallel API, you can easily draft subpeonas with an{" "}
           <Link
             href="/login"
             className="underline underline-offset-2 text-black dark:text-light"
