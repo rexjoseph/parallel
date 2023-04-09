@@ -6,7 +6,7 @@ import { FC } from "react";
 import { formatDistance } from "date-fns";
 import Paragraph from "./ui/Paragraph";
 import { Input } from "./ui/Input";
-import { Heading } from "./ui/Heading";
+import Heading from "./ui/Heading";
 import Table from "./Table";
 import ApiKeyOptions from "./ApiKeyOptions";
 
