@@ -7,7 +7,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from './ui/Tabs'
 import { nodejs, python } from '@/constants/documentation'
 
 const DocTabs: FC = ({}) => {
-  return <Tabs defaultValue='nodejs' className="max-width-2xl w-full">
+  return <Tabs defaultValue='nodejs' className="max-w-2xl w-full">
     <TabsList>
       <TabsTrigger value="nodejs">Node.js</TabsTrigger>
       <TabsTrigger value="python">Python</TabsTrigger>

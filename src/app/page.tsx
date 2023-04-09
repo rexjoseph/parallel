@@ -114,7 +114,7 @@ export default function Home() {
             <div className="col-span-2">
               <h3 className="text-2xl md:text-4xl font-medium mb-2">Enhanced consistency</h3>
               <p className="text-sm text-gray-400">
-              optimized suggestions to match your writing style
+              optimized templates to match your writing style
               </p>
             </div>
           </div>

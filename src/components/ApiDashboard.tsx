@@ -6,7 +6,7 @@ import { FC } from "react";
 import { formatDistance } from "date-fns";
 import Paragraph from "./ui/Paragraph";
 import { Input } from "./ui/Input";
-import { Heading } from "lucide-react";
+import { Heading } from "./ui/Heading";
 import Table from "./Table";
 import ApiKeyOptions from "./ApiKeyOptions";
 
@@ -39,7 +39,7 @@ const ApiDashboard = async () => {
 
   return (
     <div className="container flex flex-col gap-6">
-      <Heading>Hello, {user.user.name}</Heading>
+      {<Heading>Hello, {user.user.name}</Heading>}
       <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
         <Paragraph>Your API key:</Paragraph>
         <Input className="w-fit truncate" readOnly value={activeApiKey.key} />
