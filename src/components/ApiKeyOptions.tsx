@@ -1,3 +1,5 @@
+"use client"
+
 import { createApiKey } from "@/constants/createApiKey";
 import {
   DropdownMenu,
