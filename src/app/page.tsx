@@ -25,7 +25,7 @@ export default function Home() {
         </Heading>
 
         <Paragraph className="max-w-lg text-left md:text-center mt-4 text-base font-medium text-gray-400 md:text-xl">
-          With the parallel API, you can easily draft subpeonas with an{" "}
+          With the parallel API, you can easily draft subpoenas with an{" "}
           <Link
             href="/login"
             className="underline underline-offset-2 text-black dark:text-light"
@@ -82,7 +82,7 @@ export default function Home() {
         </div>
         <div className="grid md:grid-cols-2 gap-6 md:gap-12 max-w-4xl mx-auto text-left mt-16">
           <h3 className="text-3xl font-semibold">
-            Create subpeonas from just phone numbers
+            Create subpoenas from just phone numbers
           </h3>
           <p className="max-w-lg text-base font-medium text-gray-400 md:text-lg">
             As you prompt with a phone number and check off info being
@@ -98,7 +98,7 @@ export default function Home() {
             </h2>
             <p className="max-w-lg text-base font-medium text-gray-400 md:text-lg">
               Leverage the power of ML to produce higher quality written
-              subpeonas while freeing up your time. Streamline your drafts and make
+              subpoenas while freeing up your time. Streamline your drafts and make
               it that much easier to quickly craft the perfect one.
             </p>
           </div>

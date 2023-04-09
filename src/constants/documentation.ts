@@ -3,8 +3,8 @@ const options = {
     method: 'POST',
     url: 'https://parallel.com/api/v1/parallel',
     params: {
-      sample1: 'Draft me a legal subpeona for 1 760 935 5809. Ask for call logs on April 1 2023 and recordings if possible',
-      sample2: 'Lookup the ISP provider for 1 760 935 5809 then draft a subpeona requesting for logs'
+      sample1: 'Draft me a legal subpoena for 1 760 935 5809. Ask for call logs on April 1 2023 and recordings if possible',
+      sample2: 'Lookup the ISP provider for 1 760 935 5809 then draft a subpoena requesting for logs'
     },
     headers: {
       'Authorization': 'YOUR_API_KEY',
@@ -20,8 +20,8 @@ axios.request(options).then(function (response) {
 export const python = `import requests
 url = 'https://parallel.com/api/v1/parallel'
 api_key = 'YOUR_API_KEY'
-sample1 = 'Draft me a legal subpeona for 1 760 935 5809. Ask for call logs on April 1 2023 and recordings if possible'
-sample2 = 'Lookup the ISP provider for 1 760 935 5809 then draft a subpeona requesting for logs'
+sample1 = 'Draft me a legal subpoena for 1 760 935 5809. Ask for call logs on April 1 2023 and recordings if possible'
+sample2 = 'Lookup the ISP provider for 1 760 935 5809 then draft a subpoena requesting for logs'
 headers = {
     'Authorization': api_key
 }
