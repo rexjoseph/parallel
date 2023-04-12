@@ -15,7 +15,7 @@ export default function Home() {
     <div className="relative z-10 px-4 sm:px-6 lg:px-8 rounded-xl text-white">
       <div className="text-center max-w-7xl mx-auto pt-32 md:pt-40 pb-32 sm:py-52 flex flex-col sm:items-center justify-center">
         <div className="rounded-full w-fit text-xs text-gray-400 py-1 px-4 mb-4 bg-gray-900 border border-indigo-900/50 shadow-md">
-          Parallel AI 2023 Official Preview
+          Parallel AI BETA
         </div>
         <Heading
           size="default"
@@ -86,8 +86,8 @@ export default function Home() {
           </h3>
           <p className="max-w-lg text-base font-medium text-gray-400 md:text-lg">
             As you prompt with a phone number and check off info being
-            requested. The app automatically determines the carrier, ISP, address,
-            template and draft the subpoena in seconds. Hit download and get the PDF.
+            requested. The app automatically determines the carrier, carrier address, preferred outreach method, 
+            template and drafts the subpoena in seconds. Want your own default template? Train it. Hit download and get the PDF.
           </p>
         </div>
         <section className="relative w-full max-w-4xl mx-auto mt-28">

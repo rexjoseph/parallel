@@ -18,7 +18,7 @@ const AuthForm: FC = () => {
     } catch (err) {
       toast({
         title: "Error",
-        message: "We encountered an area trying to login you in",
+        message: "We encountered an error trying to login you in",
         type: "error",
       });
     } finally {

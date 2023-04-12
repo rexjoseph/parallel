@@ -1,6 +1,6 @@
 "use client";
 
-import axios from "axios";
+import { publicRequest } from "@/requestMethods";
 import { FC, useState, ChangeEvent, FormEvent } from "react";
 
 interface IDataReceived {
@@ -26,8 +26,8 @@ const PromptForm: FC<PromptProps> = ({ apiKey }) => {
     setDataReceived(null);
     try {
       setIsFetching(true);
-      const res = await axios.post(
-        `http://localhost:3000/api/v1/phone`,
+      const res = await publicRequest.post(
+        `/v1/phone`,
         {
           number: number,
         },
