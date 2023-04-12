@@ -1,7 +1,7 @@
 "use client"
 
 import { publicRequest } from '@/requestMethods';
-import { AxiosError } from 'axios';
+import axios, { AxiosError } from 'axios';
 import { useRouter } from 'next/navigation';
 import { FC, useState, ChangeEvent, FormEvent } from "react";
 import { toast } from './ui/Toast';
@@ -10,7 +10,7 @@ const OptForm: FC = () => {
   const [email, setEmail] = useState('')
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [message, setMessage] = useState(null);
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState(null)
   const router = useRouter()
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +21,7 @@ const OptForm: FC = () => {
     e.preventDefault()
     setIsLoading(true);
     try {
-      const res = await publicRequest.post(`/applicants/create`, {
+      const res = await axios.post(`https://parallel-iota.vercel.app/api/applicants/create`, {
         email: email
       })
       console.log(res)
@@ -31,10 +31,11 @@ const OptForm: FC = () => {
       setIsLoading(false)
       if (err instanceof AxiosError) {
         console.log(err.response)
-        setErrorMessage(err.response?.data?.message || err.message)
+        // setErrorMessage(err.response?.data?.message || err.message)
+        // setErrorMessage("Looks like you're already on the list")
       } else {
         console.log(err)
-        setErrorMessage('An error occurred.')
+        // setErrorMessage('An error occurred.')
       }
     }
   }

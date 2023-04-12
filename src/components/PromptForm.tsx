@@ -2,6 +2,7 @@
 
 import { publicRequest } from "@/requestMethods";
 import { FC, useState, ChangeEvent, FormEvent } from "react";
+import axios from "axios"
 
 interface IDataReceived {
   carrier_name: string;
@@ -26,8 +27,8 @@ const PromptForm: FC<PromptProps> = ({ apiKey }) => {
     setDataReceived(null);
     try {
       setIsFetching(true);
-      const res = await publicRequest.post(
-        `/v1/phone`,
+      const res = await axios.post(
+        `https://parallel-iota.vercel.app/api/v1/phone`,
         {
           number: number,
         },
