@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log("Request", req.body);
+  // console.log("Request", req.body);
   const { email } = req.body;
 
   const existApplicant = await db.emailSubscribers.findFirst({

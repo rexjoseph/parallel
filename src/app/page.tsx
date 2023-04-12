@@ -2,8 +2,8 @@ import Heading from "@/components/ui/Heading";
 import Paragraph from "@/components/ui/Paragraph";
 import Link from "next/link";
 import type { Metadata } from "next";
-import Image from "next/image";
 import OptForm from "@/components/OptForm";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Parallel - Your personal assistant for Legal Requests ⚡️",
@@ -38,13 +38,13 @@ export default function Home() {
         <div className="relative mt-12">
           <div className="relative w-full max-w-5xl shadow-indigo-800/10 rounded-2xl border overflow-hidden border-indigo-500/40">
             <div>
-              <span
+              <div
                 style={{
                   boxSizing: "border-box",
                   display: "inline-block",
                   overflow: "hidden",
-                  width: "initial",
-                  height: "initial",
+                  width: "100%",
+                  height: "100%",
                   background: "none",
                   opacity: 1,
                   border: 0,
@@ -54,29 +54,17 @@ export default function Home() {
                   maxWidth: "100%",
                 }}
               >
-                <span
-                  style={{
-                    boxSizing: "border-box",
-                    display: "block",
-                    width: "initial",
-                    height: "initial",
-                    background: "none",
-                    opacity: 1,
-                    border: 0,
-                    margin: 0,
-                    padding: 0,
-                    maxWidth: "100%",
-                  }}
-                ></span>
-                {/* <Image
-                  priority
-                  className="img-shadow"
-                  quality={100}
-                  style={{objectFit: 'contain'}}
-                  src="/original-painting-faces.jpeg"
-                  alt="original painting"   
-                /> */}
-              </span>
+                <Image
+                  src="/app-preview.png"
+                  width={400}
+                  height={320}
+                  alt="App preview"
+                  sizes="(max-width: 768px) 100vw,
+                        (max-width: 1200px) 50vw,
+                        33vw"
+                  style={{ height: '100%', width: '100%' }}
+                />
+              </div>
             </div>
           </div>
         </div>
