@@ -1,4 +1,3 @@
-import { cosineParallel } from "@/constants/cosine-parallel";
 import { withMethods } from "@/lib/api-middlewares/with-method";
 import { db } from "@/lib/db";
 import { openai } from "@/lib/openai";
@@ -45,9 +44,6 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
     });
 
     const data = response.data.choices[0].text
-    
-    // console.log('response', response.data.choices[0].text)
-    // return res.status(200).json(response.data.choices)
 
     const duration = new Date().getTime() - start.getTime()
 

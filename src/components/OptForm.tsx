@@ -6,7 +6,6 @@ const OptForm: FC = () => {
   const [email, setEmail] = useState('')
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
     setEmail(e.target.value);
   };
 

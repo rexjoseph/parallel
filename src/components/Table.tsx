@@ -71,13 +71,13 @@ const Table: FC<TableProps> = ({ userRequests }) => {
           fontSize: "14px",
           fontFamily: "inherit"
         }}
-        pageSizeOptions={[5]}
+        pageSizeOptions={[15]}
         disableRowSelectionOnClick
         autoHeight
         initialState={{
           pagination: {
             paginationModel: {
-              pageSize: 5,
+              pageSize: 15,
             },
           },
         }}
