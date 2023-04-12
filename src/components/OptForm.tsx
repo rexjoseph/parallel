@@ -42,7 +42,7 @@ const OptForm: FC = () => {
 
   return <div className="flex-1 w-full flex justify-center mt-10 mb-10">
   <div className="relative w-full max-w-md">
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
         <input value={email} onChange={handleChange} className="w-full ring-transparent focus:outline-none focus:border-gray-400 py-3 px-8 md:pr-16 rounded-full bg-transparent border border-gray-700 transition hover:border-gray-400 hover:placeholder-white" placeholder="Enter Your Email" />
         <div className="md:absolute w-full md:w-fit right-0 top-0 bottom-0 flex items-center">
@@ -52,7 +52,7 @@ const OptForm: FC = () => {
       {isLoading && <p>Setting up your spot...</p>}
       {message && {message}}
       {errorMessage && {errorMessage}}
-    </>
+    </div>
   </div>
 </div>
 }
