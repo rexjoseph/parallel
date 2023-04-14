@@ -62,7 +62,7 @@ export default function Home() {
                   sizes="(max-width: 768px) 100vw,
                         (max-width: 1200px) 50vw,
                         33vw"
-                  style={{ height: '100%', width: '100%' }}
+                  style={{ height: "100%", width: "100%" }}
                 />
               </div>
             </div>
@@ -73,9 +73,12 @@ export default function Home() {
             Create subpoenas from just phone numbers
           </h3>
           <p className="max-w-lg text-base font-medium text-gray-400 md:text-lg">
-            As you prompt with a phone number and check off info being
-            requested. The app automatically determines the carrier, carrier address, preferred outreach method, 
-            template and drafts the subpoena in seconds. Want your own default template? Train it. Hit download and get the PDF.
+            Check off information being requested, the app automatically determines the
+            carrier/company, address to
+            subpoena, preferred method to serve, provides a
+            template then drafts the subpoena in
+            seconds. Want your own custom template everytime? Train it. Hit
+            download and get the document in PDF.
           </p>
         </div>
         <section className="relative w-full max-w-4xl mx-auto mt-28">
@@ -86,37 +89,43 @@ export default function Home() {
             </h2>
             <p className="max-w-lg text-base font-medium text-gray-400 md:text-lg">
               Leverage the power of ML to produce higher quality written
-              subpoenas while freeing up your time. Streamline your drafts and make
-              it that much easier to quickly craft the perfect one.
+              subpoenas while freeing up your time. Streamline your drafts and
+              make it that much easier to quickly craft the perfect one.
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-x-8 gap-y-10 md:gap-0 text-left pt-6">
             <div>
-              <h3 className="text-2xl md:text-4xl font-medium mb-2">&gt; 170bn</h3>
+              <h3 className="text-2xl md:text-4xl font-medium mb-2">
+                &gt; 170bn
+              </h3>
               <p className="text-sm text-gray-400">trained parameters</p>
             </div>
             <div>
-             <h3 className="text-2xl md:text-4xl font-medium mb-2">Context</h3>
-             <p className="text-sm text-gray-400">understanding & interference</p>
+              <h3 className="text-2xl md:text-4xl font-medium mb-2">Context</h3>
+              <p className="text-sm text-gray-400">
+                understanding & interference
+              </p>
             </div>
             <div className="col-span-2">
-              <h3 className="text-2xl md:text-4xl font-medium mb-2">Enhanced consistency</h3>
+              <h3 className="text-2xl md:text-4xl font-medium mb-2">
+                Enhanced consistency
+              </h3>
               <p className="text-sm text-gray-400">
-              optimized templates to match your writing style
+                optimized templates to match your writing style
               </p>
             </div>
           </div>
         </section>
       </div>
       <footer className="text-white border-t border-gray-800">
-          <div className="mx-auto max-w-md py-12 px-4 overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-            <p className="-my-2 text-center text-base text-white">
-              <span className="text-gray-400 group-hover:text-white transition">
-                Parallel - Your personal assistant for Legal Requests ⚡️
-              </span>
-            </p>
-          </div>
-        </footer>
+        <div className="mx-auto max-w-md py-12 px-4 overflow-hidden sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
+          <p className="-my-2 text-center text-base text-white">
+            <span className="text-gray-400 group-hover:text-white transition">
+              Parallel - Your personal assistant for Legal Requests ⚡️
+            </span>
+          </p>
+        </div>
+      </footer>
     </div>
   );
 }

@@ -8,6 +8,7 @@ import { Input } from "./ui/Input";
 import Heading from "./ui/Heading";
 import Table from "./Table";
 import ApiKeyOptions from "./ApiKeyOptions";
+import Image from "next/image";
 
 const ApiDashboard = async () => {
   const user = await getServerSession(authOptions);
@@ -38,7 +39,17 @@ const ApiDashboard = async () => {
 
   return (
     <div className="container flex flex-col gap-6">
-      <Heading style={{textAlign: "left"}}>Hey 👋, {user.user.name}</Heading>
+      <div className="flex justify-between">
+        <Heading style={{textAlign: "left"}}>Hey 👋, {user.user.name}</Heading>
+        <div>
+          <Image 
+            width ={40}
+            height={40}
+            className="w-10 h-10 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" 
+            src={user.user.image ? user.user.image : '/default-image.jpg'}  
+            alt="Bordered avatar" />
+        </div>
+      </div>
       <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
         <Paragraph>Your API key:</Paragraph>
         <Input className="w-fit truncate" readOnly value={activeApiKey.key} />
