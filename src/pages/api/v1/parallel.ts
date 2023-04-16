@@ -6,7 +6,7 @@ import { z } from "zod";
 
 
 const reqSchema = z.object({
-  sample1: z.string().max(1000)
+  prompt: z.string().max(1000)
 });
 
 
@@ -19,7 +19,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   try {
-    const { sample1 } = reqSchema.parse(body);
+    const { prompt } = reqSchema.parse(body);
     const validApiKey = await db.apiKey.findFirst({
       where: {
         key: apiKey,
@@ -35,12 +35,12 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const response = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: `${sample1}`,
-      temperature: 0.9,
-      max_tokens: 150,
-      top_p: 1,
+      prompt: `${prompt}`,
+      temperature: 0.7,
+      max_tokens: 100,
+      /* top_p: 1,
       frequency_penalty: 0.0,
-      presence_penalty: 0.6,
+      presence_penalty: 0.6, */
     });
 
     const data = response.data.choices[0].text

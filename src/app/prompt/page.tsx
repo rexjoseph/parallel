@@ -27,8 +27,8 @@ const page = async () => {
         <div className="container flex flex-col gap-6">
           <Heading style={{ textAlign: "left" }}>Hey 👋,</Heading>
           <p className="text-slate-700 dark:text-slate-300 mb-2">
-            Jared here 😃. I run your subpoena errands - my current average lead
-            time is 7.5s. Give me a number
+            Jared here 😃. I run your legal errands - my average lead
+            time is 4.5s.
           </p>
           <PromptForm apiKey={apiKey} />
         </div>
