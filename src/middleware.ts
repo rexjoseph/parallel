@@ -3,6 +3,7 @@ import { Redis } from "@upstash/redis";
 import { getToken } from "next-auth/jwt";
 import { withAuth } from "next-auth/middleware";
 import { NextResponse } from "next/server";
+import { toast } from "./components/ui/Toast";
 
 const redis = new Redis({
   url: process.env.REDIS_URL,
@@ -23,10 +24,11 @@ export default withAuth(
       const ip = req.ip ?? "127.0.0.1";
       try {
         const { success } = await ratelimit.limit(ip);
-        if (!success)
+        if (!success) {
           return NextResponse.json({
             error: "Too many requests. Give it a break",
           });
+        }
         return NextResponse.next();
       } catch (err) {
         return NextResponse.json({ error: "Internal server error" });
