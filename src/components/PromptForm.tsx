@@ -70,7 +70,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
       let phoneLogNew = [...phoneLog, { user: "me", content: `${number}` }];
       setPhoneLog(phoneLogNew);
       const res = await axios.post(
-        `https://parallel-iota.vercel.app/api/v1/phone`,
+        `https://parallel-2uej.vercel.app/api/v1/phone`,
         {
           number: number,
         },
@@ -109,7 +109,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
       setChatLog(chatLogNew);
       const messages = chatLogNew.map((message) => message.content).join("\n");
       const res = await axios.post(
-        `https://parallel-iota.vercel.app/api/v1/parallel`,
+        `https://parallel-2uej.vercel.app/api/v1/parallel`,
         {
           prompt: messages,
         },
