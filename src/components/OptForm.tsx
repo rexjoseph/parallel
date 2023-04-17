@@ -21,7 +21,7 @@ const OptForm: FC = () => {
     e.preventDefault()
     setIsLoading(true);
     try {
-      const res = await axios.post(`http://localhost:3000/api/applicants/create`, {
+      const res = await axios.post(`https://parallel-iota.vercel.app/api/applicants/create`, {
         email: email
       })
       console.log(res)

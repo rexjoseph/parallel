@@ -62,7 +62,7 @@ const Table: FC<TableProps> = ({ userRequests }) => {
     col3: `${request.timestamp} ago`,
     col4: `${(request.duration / 1000).toFixed(1)}s`,
     col5: request.status,
-  }));
+  })).reverse();
   return (
     <ThemeProvider theme={theme}>
       <DataGrid

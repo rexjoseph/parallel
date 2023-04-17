@@ -20,6 +20,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
   try {
     const { prompt } = reqSchema.parse(body);
+    // console.log(prompt);
     const validApiKey = await db.apiKey.findFirst({
       where: {
         key: apiKey,
@@ -33,17 +34,27 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
 
     const start = new Date()
 
-    const response = await openai.createCompletion({
+    const response = await openai.createChatCompletion({
+      model: "gpt-3.5-turbo",
+      messages: [{role: "user", content: `${prompt}`}],
+      temperature: 0.7,
+      max_tokens: 256,
+      top_p: 1,
+      frequency_penalty: 0,
+      presence_penalty: 0
+    });
+
+    /* const response = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: `${prompt}`,
       temperature: 0.7,
       max_tokens: 100,
-      /* top_p: 1,
+      top_p: 1,
       frequency_penalty: 0.0,
-      presence_penalty: 0.6, */
-    });
+      presence_penalty: 0.6,
+    }); */
 
-    const data = response.data.choices[0].text
+    const data = response.data.choices[0].message
 
     const duration = new Date().getTime() - start.getTime()
 
