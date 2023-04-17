@@ -147,10 +147,10 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
         <>
           <div
             style={{ height: "90vh" }}
-            className="overflow-hidden w-full relative flex"
+            className="w-full relative flex"
           >
             <div className="flex h-full max-w-full flex-1 flex-col">
-              <main className="relative h-full w-full transition-width flex flex-col overflow-hidden items-stretch flex-1">
+              <main className="relative h-full w-full transition-width flex flex-col items-stretch flex-1">
                 <div className="flex-1">
                   <div className="dark:bg-gray-800">
                     <div className="">
@@ -231,7 +231,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                   </div>
                 </div>
                 {/* this holds the form */}
-                <div className="absolute bottom-0 left-0 w-full border-t md:border-t-0 dark:border-white/20 md:border-transparent md:dark:border-transparent md:bg-vert-light-gradient bg-white dark:bg-gray-800 md:!bg-transparent dark:md:bg-vert-dark-gradient pt-2">
+                <div className="w-full border-t md:border-t-0 dark:border-white/20 md:border-transparent md:dark:border-transparent md:bg-vert-light-gradient bg-white dark:bg-gray-800 md:!bg-transparent dark:md:bg-vert-dark-gradient pt-2">
                   {isFetching && (
                     <div className="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl flex lg:px-0 m-auto">
                       <div className="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
@@ -289,10 +289,10 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
         <>
           <div
             style={{ height: "90vh" }}
-            className="overflow-hidden w-full relative flex"
+            className="w-full relative flex"
           >
             <div className="flex h-full max-w-full flex-1 flex-col">
-              <main className="relative h-full w-full transition-width flex flex-col overflow-hidden items-stretch flex-1">
+              <main className="relative h-full w-full transition-width flex flex-col items-stretch flex-1">
                 <div className="flex-1 pb-20">
                   <div className="dark:bg-gray-800">
                     <div className="">
@@ -374,7 +374,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                   </div>
                 </div>
                 {/* this holds the form */}
-                <div className="absolute bottom-0 left-0 w-full border-t md:border-t-0 dark:border-white/20 md:border-transparent md:dark:border-transparent md:bg-vert-light-gradient bg-white dark:bg-gray-800 md:!bg-transparent dark:md:bg-vert-dark-gradient pt-2">
+                <div className="w-full border-t md:border-t-0 dark:border-white/20 md:border-transparent md:dark:border-transparent md:bg-vert-light-gradient bg-white dark:bg-gray-800 md:!bg-transparent dark:md:bg-vert-dark-gradient pt-2">
                   {isPrompting && (
                     <div className="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl flex lg:px-0 m-auto">
                       <div className="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
