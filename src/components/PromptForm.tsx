@@ -81,7 +81,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
         }
       );
       await setNumber("");
-      // console.log(res);
+      
       await setIsFetching(false);
       if (res.data.error === "Too many requests. Give it a break") {
         return toast({
@@ -94,8 +94,6 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
         ...phoneLogNew,
         { user: "chatgpt", content: res.data.data },
       ]);
-      // setDataReceived(res.data.data);
-      // console.log(dataReceived);
     } catch (err) {}
   };
 
