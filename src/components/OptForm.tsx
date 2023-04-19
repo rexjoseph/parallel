@@ -29,14 +29,7 @@ const OptForm: FC = () => {
       setMessage(res.data.message)
     } catch (err: unknown) {
       setIsLoading(false)
-      if (err instanceof AxiosError) {
-        console.log(err.response)
-        setErrorMessage(err.response?.data.message || err.message)
-      } else {
-        setIsLoading(false)
-        console.log(err)
-        setErrorMessage("You're already on the list")
-      }
+      setErrorMessage("You're already on the list")
     }
   }
 
