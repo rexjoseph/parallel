@@ -5,8 +5,8 @@ import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
 
 const redis = new Redis({
-  url: process.env.REDIS_URL,
-  token: process.env.REDIS_SECRET,
+  url: "https://sharp-starling-30198.upstash.io",
+  token: "AXX2ACQgYjA1MTc3M2EtOGNkOC00ZmY5LTkyZmItNDgyOTVlN2JmMWIxMzA0M2Y0ZmQxYjU4NDMzZDlhNWJhYmRlYTk3NzY3MWQ="
 })
 
 const ratelimit = new Ratelimit({
