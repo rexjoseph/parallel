@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Market Sans";
+  src: local("MarketSansThin"),
+    url("/fonts/MarketSans-Thin.ttf") format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Market Sans";
+  src: local("MarketSansLight"),
+    url("/fonts/MarketSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Market Sans";
+  src: local("MarketSansRegular"),
+    url("/fonts/MarketSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Market Sans";
+  src: local("MarketSansMedium"),
+    url("/fonts/MarketSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Market Sans";
+  src: local("MarketSansSemiBold"),
+    url("/fonts/MarketSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Market Sans";
+  src: local("MarketSansBold"),
+    url("/fonts/MarketSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Market Sans', sans-serif;
+}
+
+.dark .three-d {
+  text-shadow: 0px 5px 0px #533519;
+}
+
+.three-d {
+  text-shadow: none;
+}
+
+.dark .simplebar-scrollbar::before {
+  background-color: white;
+}
