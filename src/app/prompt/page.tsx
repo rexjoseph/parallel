@@ -6,7 +6,7 @@ import { notFound } from "next/navigation";
 import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Parallel - Your personal assistant for Legal Requests ⚡️",
+  title: "Jared UI",
   description: "Open source",
 };
 

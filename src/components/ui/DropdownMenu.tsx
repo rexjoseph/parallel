@@ -172,7 +172,7 @@ const DropdownMenuShortcut = ({
   return (
     <span
       className={cn(
-        'ml-auto text-xs tracking-widest text-slate-500',
+        'ml-auto text-base tracking-widest text-slate-500',
         className
       )}
       {...props}

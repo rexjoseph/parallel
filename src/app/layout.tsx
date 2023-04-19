@@ -67,7 +67,7 @@ export default function RootLayout({
     'bg-white text-slate-900 antialiased', rubik.className
     )}>
       <head />
-      <body className='min-h-screen bg-white dark:bg-dark antialiased'>
+      <body className='min-h-screen bg-white dark:bg-black antialiased'>
         <Providers>
           {/* @ts-expect-error Server Component */}
           <Navbar />

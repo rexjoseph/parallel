@@ -65,3 +65,9 @@ body {
 .dark .simplebar-scrollbar::before {
   background-color: white;
 }
+
+@media (max-width: 768px) {
+  #right-panel-div {
+    display: none;
+  }
+}
