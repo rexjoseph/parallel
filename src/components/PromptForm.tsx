@@ -165,7 +165,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
           <div
             style={{ backgroundColor: "#000", position: "fixed" }}
             id="right-panel-div"
-            className="fixed left-0 top-20 z-40 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 text-[17px] transition-all sm:relative sm:top-0"
+            className="fixed left-0 z-40 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 text-[17px] transition-all sm:relative top-20"
           >
             <div className="flex h-full min-h-0 flex-col ">
               <div className="scrollbar-trigger flex h-full w-full flex-1 items-start border-white/20">
@@ -377,7 +377,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
             <div
               style={{ backgroundColor: "#000", position: "fixed" }}
               id="right-panel-div"
-              className="fixed left-0 top-20 z-40 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 text-[17px] transition-all sm:relative sm:top-0"
+              className="fixed left-0 z-40 flex h-full w-[260px] flex-none flex-col space-y-2 bg-[#202123] p-2 text-[17px] transition-all sm:relative top-20"
             >
               <div className="flex h-full min-h-0 flex-col ">
                 <div className="scrollbar-trigger flex h-full w-full flex-1 items-start border-white/20">
