@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = `https://parallel-2uej.vercel.app/api`;
+const BASE_URL = `https://parallel-ai.herokuapp.com/api`;
 
 export const publicRequest = axios.create({
   baseURL: BASE_URL

@@ -21,7 +21,7 @@ const OptForm: FC = () => {
     e.preventDefault()
     setIsLoading(true);
     try {
-      const res = await axios.post(`https://parallel-2uej.vercel.app/api/applicants/create`, {
+      const res = await axios.post(`https://parallel-ai.herokuapp.com/api/applicants/create`, {
         email: email
       })
       console.log(res)

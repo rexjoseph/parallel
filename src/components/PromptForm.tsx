@@ -69,7 +69,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
       let phoneLogNew = [...phoneLog, { user: "me", content: `${number}` }];
       setPhoneLog(phoneLogNew);
       const res = await axios.post(
-        `https://parallel-2uej.vercel.app/api/v1/phone`,
+        `https://parallel-ai.herokuapp.com/api/v1/phone`,
         {
           number: number,
         },
@@ -114,7 +114,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
     let chatLogNew = [...chatLog, { user: "me", content: `${prompt}` }];
     setChatLog(chatLogNew);
     const messages = chatLogNew.map((message) => message.content).join("\n");
-    const response = await fetch("https://parallel-2uej.vercel.app/api/v1/stream", {
+    const response = await fetch("https://parallel-ai.herokuapp.com/api/v1/stream", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
