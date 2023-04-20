@@ -9,6 +9,7 @@ import Heading from "./ui/Heading";
 import Table from "./Table";
 import ApiKeyOptions from "./ApiKeyOptions";
 import Image from "next/image";
+import Link from "next/link";
 
 const ApiDashboard = async () => {
   const user = await getServerSession(authOptions);
@@ -50,6 +51,9 @@ const ApiDashboard = async () => {
             alt="Bordered avatar" />
         </div>
       </div>
+      <Link href={`/billing`}>
+        Billing
+      </Link>
       <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
         <Paragraph>Your API key:</Paragraph>
         <Input className="w-fit truncate" readOnly value={activeApiKey.key} />
