@@ -268,7 +268,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                                 </div>
                                 {message.user === "chatgpt" && (
                                   <div className="flex justify-between lg:block">
-                                    <div className="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible">
+                                    <div className="text-gray-400 flex self-start lg:self-start justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible">
                                       <button
                                         onClick={() => {
                                           navigator.clipboard.writeText(
@@ -470,7 +470,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                                     </div>
                                   )}
                                 </div>
-                                <div className="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+                                <div className="relative flex w-[calc(100%-50px)] flex-row gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
                                   <div className="flex flex-grow flex-col gap-3">
                                     <div className="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">
                                       <div className="text-base markdown prose w-full break-words dark:prose-invert dark">
@@ -480,7 +480,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                                   </div>
                                   {message.user === "chatgpt" && (
                                     <div className="flex justify-between lg:block">
-                                      <div className="text-gray-400 flex self-end lg:self-center justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible">
+                                      <div className="text-gray-400 flex self-start lg:self-start justify-center mt-2 gap-2 md:gap-3 lg:gap-1 lg:absolute lg:top-0 lg:translate-x-full lg:right-0 lg:mt-0 lg:pl-2 visible">
                                         <button
                                           onClick={() => {
                                             navigator.clipboard.writeText(
@@ -531,7 +531,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                 >
                   {isPrompting && (
                     <div className="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl flex lg:px-0 m-auto">
-                      <div className="relative flex w-[calc(100%-50px)] flex-col gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
+                      <div className="relative flex w-[calc(100%-50px)] flex-row gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
                         <div className="flex flex-grow flex-col gap-3">
                           <div className="min-h-[20px] flex flex-col items-start gap-4 whitespace-pre-wrap">
                             <div className="text-sm markdown prose w-full break-words dark:prose-invert dark">
