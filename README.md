@@ -1,6 +1,6 @@
 # Parallel AI API
 
-Paralle AI is the first product from the team at Undercode UI showing an advanced legal assistance with our in-house API models and OpenAI's models built using Next.js, TypeScript, Tailwind and CSS.
+Parallel AI is the first product from the team at Undercode UI showing an advanced legal assistance with our in-house API models and OpenAI's models built using Next.js, TypeScript, Tailwind and CSS.
 
 ![Parallel AI](./public/app-preview.png)
 
