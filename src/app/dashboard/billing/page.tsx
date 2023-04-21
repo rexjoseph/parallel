@@ -1,27 +1,59 @@
+import { BillingPanel } from "@/components/ui/BillingPanel";
 import Heading from "@/components/ui/Heading";
 import Paragraph from "@/components/ui/Paragraph";
 import { authOptions } from "@/lib/auth";
+import { getCurrentUser } from "@/lib/session";
+import { stripe } from "@/lib/stripe";
+import { getUserSubscriptionPlan } from "@/lib/subscription";
 import { Metadata } from "next";
-import { getServerSession } from "next-auth";
+import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
-  title: "Dashboard",
+  title: "Billing",
   description: "Open source",
 };
 
 export default async function BillingPage() {
-  const currentUser = await getServerSession(authOptions);
+  const currentUser = await getCurrentUser()
 
   if (!currentUser) {
-    redirect("/login")
+    redirect("/login");
+  }
+
+  const subscriptionPlan = await getUserSubscriptionPlan(currentUser.id);
+
+  /*
+  let isCanceled = false;
+  if (subscriptionPlan.isPro && subscriptionPlan.stripeSubscriptionId) {
+    const stripePlan = await stripe.subscriptions.retrieve(
+      subscriptionPlan.stripeSubscriptionId
+    );
+    isCanceled = stripePlan.cancel_at_period_end;
+  }
+  */
+  let isCanceled = false;
+  if (subscriptionPlan.isPro && subscriptionPlan.stripeSubscriptionId) {
+    if (typeof subscriptionPlan.stripeSubscriptionId === 'string') {
+      const stripePlan = await stripe.subscriptions.retrieve(
+        subscriptionPlan.stripeSubscriptionId
+      );
+      isCanceled = stripePlan.cancel_at_period_end;
+    } else {
+      console.log('stripeSubscriptionId is not a string');
+    }
   }
 
   return (
     <>
       <Heading>Billing</Heading>
       <Paragraph>Manage billing and your subscription plan.</Paragraph>
-      <BillingPanel /> 
+      <BillingPanel
+        subscriptionPlan={{
+          ...subscriptionPlan,
+          isCanceled,
+        }}
+      />
     </>
-  )
+  );
 }

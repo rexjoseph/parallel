@@ -44,6 +44,7 @@
     "react-hot-toast": "^2.4.0",
     "sharp": "^0.31.3",
     "simplebar-react": "^3.2.1",
+    "stripe": "^12.1.1",
     "tailwind-merge": "^1.10.0",
     "twilio": "^4.10.0",
     "zod": "^3.21.0"
