@@ -38,16 +38,13 @@ export default function Home() {
         <div>
           <div>
             <div>
-              <div
-                
-              >
+              <div>
                 <Image
                   src="/app-preview.png"
                   width={800}
                   height={320}
                   alt="App preview"
-                  sizes="(max-width: 768px) 100vw,
-                        (max-width: 1200px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw,"
                   style={{ height: "100%", width: "100%" }}
                 />
               </div>
@@ -59,10 +56,9 @@ export default function Home() {
             Create subpoenas from just phone numbers
           </h3>
           <p className="max-w-lg text-base font-medium text-gray-400 md:text-lg">
-            Check off information being requested, the app automatically determines the
-            carrier/company, address to
-            subpoena, preferred method to serve, provides a
-            template then drafts the subpoena in
+            Check off information being requested, the app automatically
+            determines the carrier/company, address to subpoena, preferred
+            method to serve, provides a template then drafts the subpoena in
             seconds. Want your own custom template everytime? Train it. Hit
             download and get the document in PDF.
           </p>

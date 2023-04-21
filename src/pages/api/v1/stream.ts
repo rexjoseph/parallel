@@ -1,6 +1,6 @@
 import { OpenAIStream, OpenAIStreamPayload } from "@/utils/openAIStream";
 
-const SERVER_URL = "https://parallel-ai.herokuapp.com";
+const SERVER_URL = "http://localhost:3000";
 
 if (!process.env.OPENAI_API_KEY) {
   throw new Error("Missing ENV");

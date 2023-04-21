@@ -45,6 +45,8 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
   const [isPhoneTab, setIsPhoneTab] = useState(false);
   const [isPoenaTab, setIsPoenaTab] = useState(false);
   const scroll = useRef<HTMLDivElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const originalHeight = "auto";
 
   const switchPhone = () => {
     setIsPoenaTab(false);
@@ -69,7 +71,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
       let phoneLogNew = [...phoneLog, { user: "me", content: `${number}` }];
       setPhoneLog(phoneLogNew);
       const res = await axios.post(
-        `https://parallel-ai.herokuapp.com/api/v1/phone`,
+        `http://localhost:3000/api/v1/phone`,
         {
           number: number,
         },
@@ -110,22 +112,20 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
     e.preventDefault();
     await setIsPrompting(true);
     await setPrompt("");
+    textareaRef.current!.style.height = originalHeight;
     let chatLogNew = [...chatLog, { user: "me", content: `${prompt}` }];
     setChatLog(chatLogNew);
     const messages = chatLogNew.map((message) => message.content).join("\n");
-    const response = await fetch(
-      "https://parallel-ai.herokuapp.com/api/v1/stream",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: apiKey.key,
-        },
-        body: JSON.stringify({
-          prompt: messages,
-        }),
-      }
-    );
+    const response = await fetch("http://localhost:3000/api/v1/stream", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: apiKey.key,
+      },
+      body: JSON.stringify({
+        prompt: messages,
+      }),
+    });
     if (!response.ok) {
       throw new Error(response.statusText);
     }
@@ -164,16 +164,32 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
     // This sets the textarea value
     setPrompt(textarea.value);
 
-    // This calculates the height of the textarea's content
-    const height = textarea.scrollHeight;
-
-    // If the height is less than the max height, update the textarea's height
-    if (height <= 200) {
-      textarea.style.height = height + "px";
+    // Reset the textarea height to auto if the value is empty
+    if (textarea.value.trim() === "") {
+      textarea.style.height = originalHeight;
     } else {
-      textarea.style.height = "200px";
+      // Reset the textarea height to auto
+      textarea.style.height = "auto";
+
+      // This calculates the height of the textarea's content
+      const height = textarea.scrollHeight;
+      // If the height is less than the max height, update the textarea's height
+      if (height <= 200) {
+        textarea.style.height = height + "px";
+      } else {
+        textarea.style.height = "200px";
+      }
     }
   };
+
+  // Let's reset the textarea height when the component is mounted
+  /* useEffect(() => {
+    const textarea = textareaRef.current;
+
+    if (textarea) {
+      textarea.style.height = originalHeight;
+    }
+  }, []); */
 
   const welcomeTypes = ["Good morning", "Good afternoon", "Good evening"];
   const hour = new Date().getHours();
@@ -573,6 +589,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                       <div className="flex flex-col w-full flex-grow relative bg-white dark:text-white dark:bg-gray-700 shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]">
                         <textarea
                           tabIndex={0}
+                          ref={textareaRef}
                           data-id="root"
                           style={{ maxHeight: "200px", overflowY: "hidden" }}
                           value={prompt}

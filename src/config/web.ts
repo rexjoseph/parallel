@@ -3,10 +3,10 @@ import { WebConfig } from "@/types";
 export const webConfig: WebConfig = {
   title: "Parallel - Your personal assistant for Legal Requests ⚡️",
   description: "Parallel - Your personal assistant for Legal Requests ⚡️",
-  url: "https://parallel-ai.herokuapp.com",
-  ogImage: "https://parallel-ai.herokuapp.com/og.jpg",
+  url: "http://localhost:3000",
+  ogImage: "http://localhost:3000/og.jpg",
   links: {
-    twitter: "https://parallel-ai.herokuapp.com",
+    twitter: "http://localhost:3000",
     github: "https://github.com/rexjoseph/parallel",
   },
 };
