@@ -35,33 +35,19 @@ export default function Home() {
           . Be the first to gain access when we launch.
         </Paragraph>
         <OptForm />
-        <div className="relative mt-12">
-          <div className="relative w-full max-w-7xl shadow-indigo-800/10 rounded-2xl border overflow-hidden border-indigo-500/40">
+        <div>
+          <div>
             <div>
               <div
-                style={{
-                  boxSizing: "border-box",
-                  display: "inline-block",
-                  overflow: "hidden",
-                  width: "100%",
-                  height: "100%",
-                  background: "none",
-                  opacity: 1,
-                  border: 0,
-                  margin: 0,
-                  padding: 0,
-                  position: "relative",
-                  maxWidth: "100%",
-                }}
+                
               >
                 <Image
                   src="/app-preview.png"
-                  width={400}
+                  width={800}
                   height={320}
                   alt="App preview"
                   sizes="(max-width: 768px) 100vw,
-                        (max-width: 1200px) 50vw,
-                        33vw"
+                        (max-width: 1200px) 50vw, 33vw"
                   style={{ height: "100%", width: "100%" }}
                 />
               </div>

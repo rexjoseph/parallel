@@ -33,6 +33,6 @@ export async function getUserSubscriptionPlan(
     ...plan,
     ...user,
     stripeCurrentPeriodEnd: user.stripeCurrentPeriodEnd?.getTime(),
-    isPro,
+    onPro,
   };
 }

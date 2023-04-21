@@ -51,7 +51,7 @@ const ApiDashboard = async () => {
             alt="Bordered avatar" />
         </div>
       </div>
-      <Link href={`/billing`}>
+      <Link href={`/dashboard/billing`}>
         Billing
       </Link>
       <div className="flex flex-col md:flex-row gap-4 justify-center md:justify-start items-center">
