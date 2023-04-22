@@ -25,7 +25,7 @@ export default async function BillingPage() {
 
   /*
   let isCanceled = false;
-  if (subscriptionPlan.isPro && subscriptionPlan.stripeSubscriptionId) {
+  if (subscriptionPlan.onPro && subscriptionPlan.stripeSubscriptionId) {
     const stripePlan = await stripe.subscriptions.retrieve(
       subscriptionPlan.stripeSubscriptionId
     );
@@ -33,7 +33,7 @@ export default async function BillingPage() {
   }
   */
   let isCanceled = false;
-  if (subscriptionPlan.isPro && subscriptionPlan.stripeSubscriptionId) {
+  if (subscriptionPlan.onPro && subscriptionPlan.stripeSubscriptionId) {
     if (typeof subscriptionPlan.stripeSubscriptionId === 'string') {
       const stripePlan = await stripe.subscriptions.retrieve(
         subscriptionPlan.stripeSubscriptionId

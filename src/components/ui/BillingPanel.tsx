@@ -63,9 +63,9 @@ export function BillingPanel({
             {isFetching && (
               <div className="mr-2 h-4 w-4 animate-spin">...</div>
             )}
-            {subscriptionPlan.isPro ? "Manage Subscription" : "Upgrade to PRO"}
+            {subscriptionPlan.onPro ? "Manage Subscription" : "Upgrade to PRO"}
           </button>
-          {subscriptionPlan.isPro ? (
+          {subscriptionPlan.onPro ? (
             <p className="rounded-full text-xs font-medium">
               {subscriptionPlan.isCanceled
                 ? "Your plan will be canceled on "

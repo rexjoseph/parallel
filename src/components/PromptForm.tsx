@@ -41,7 +41,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
   const [chatLog, setChatLog] = useState<ChatMessage[]>([]);
   const [phoneLog, setPhoneLog] = useState<ChatMessage[]>([]);
   const [isFetching, setIsFetching] = useState(false);
-  const [isPrompting, setIsPrompting] = useState(false);
+  const [onPrompting, setonPrompting] = useState(false);
   const [isPhoneTab, setIsPhoneTab] = useState(false);
   const [isPoenaTab, setIsPoenaTab] = useState(false);
   const scroll = useRef<HTMLDivElement>(null);
@@ -110,7 +110,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
     e
   ) => {
     e.preventDefault();
-    await setIsPrompting(true);
+    await setonPrompting(true);
     await setPrompt("");
     textareaRef.current!.style.height = originalHeight;
     let chatLogNew = [...chatLog, { user: "me", content: `${prompt}` }];
@@ -129,7 +129,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
     if (!response.ok) {
       throw new Error(response.statusText);
     }
-    await setIsPrompting(false);
+    await setonPrompting(false);
     // This data is a ReadableStream
     const data = response.body;
     if (!data) {
@@ -558,7 +558,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                   style={{ backgroundColor: "#000" }}
                   className="bottom-0 fixed w-full border-transparent bg-gradient-to-b from-transparent via-white to-white pt-6 dark:border-white/20 dark:via-[#343541] dark:to-[#343541] md:pt-2"
                 >
-                  {isPrompting && (
+                  {onPrompting && (
                     <div className="text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl flex lg:px-0 m-auto">
                       <div className="relative flex w-[calc(100%-50px)] flex-row gap-1 md:gap-3 lg:w-[calc(100%-115px)]">
                         <div className="flex flex-grow flex-col gap-3">
