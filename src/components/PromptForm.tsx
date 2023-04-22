@@ -182,15 +182,6 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
     }
   };
 
-  // Let's reset the textarea height when the component is mounted
-  /* useEffect(() => {
-    const textarea = textareaRef.current;
-
-    if (textarea) {
-      textarea.style.height = originalHeight;
-    }
-  }, []); */
-
   const welcomeTypes = ["Good morning", "Good afternoon", "Good evening"];
   const hour = new Date().getHours();
 

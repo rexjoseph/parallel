@@ -14,6 +14,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     try {
       const session = await getServerSession(req, res, authOptions)
       const user = session?.user
+      // console.log("user", user)
 
       if (!user || !user.email) {
         throw new Error("User not found.")
@@ -21,7 +22,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
 
       /*
       const subscriptionPlan = await getUserSubscriptionPlan(user.id)
-      if (subscriptionPlan.isPro && subscriptionPlan.stripeCustomerId) {
+      if (subscriptionPlan.onPro && subscriptionPlan.stripeCustomerId) {
         const stripeSession = await stripe.billingPortal.sessions.create({
           customer: subscriptionPlan.stripeCustomerId,
           return_url: billUrl
@@ -32,8 +33,8 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
       */
 
       const subscriptionPlan = await getUserSubscriptionPlan(user.id)
-
-      if (subscriptionPlan.isPro && subscriptionPlan.stripeCustomerId) {
+      console.log("subscriptionPlan", subscriptionPlan)
+      if (subscriptionPlan.onPro && subscriptionPlan.stripeCustomerId) {
         if (typeof subscriptionPlan.stripeCustomerId === 'string') {
           const stripeSession = await stripe.billingPortal.sessions.create({
             customer: subscriptionPlan.stripeCustomerId,
@@ -63,6 +64,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
           userId: user.id
         }
       })
+      console.log(stripeSession)
       return res.json({ url: stripeSession.url })
     } catch (error) {
       return res.status(500).end()

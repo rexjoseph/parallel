@@ -26,6 +26,7 @@ export function BillingPanel({
 
     // access stripe session URL
     const res = await fetch("/api/users/stripe");
+    console.log(res)
 
     if (!res?.ok) {
       return toast({

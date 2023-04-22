@@ -45,15 +45,15 @@ export default async function BillingPage() {
   }
 
   return (
-    <>
-      <Heading>Billing</Heading>
-      <Paragraph>Manage billing and your subscription plan.</Paragraph>
+    <div style={{marginTop: "30px"}} className="container max-w-7xl mx-auto w-full">
+      <Heading style={{textAlign: "left"}}>Billing</Heading>
+      <Paragraph style={{textAlign: "left"}}>Manage billing and your subscription plan.</Paragraph>
       <BillingPanel
         subscriptionPlan={{
           ...subscriptionPlan,
           isCanceled,
         }}
       />
-    </>
+    </div>
   );
 }
