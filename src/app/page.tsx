@@ -25,7 +25,7 @@ export default function Home() {
         </Heading>
 
         <Paragraph className="max-w-lg text-left md:text-center mt-4 text-base font-medium text-gray-400 md:text-xl">
-          With the parallel API, you can easily draft subpoenas with an{" "}
+          With the parallel API, you can easily draft subpoenas, lookup phone carriers, and manage case discoveries with an AI Assistant using an{" "}
           <Link
             href="/login"
             className="underline underline-offset-2 text-black dark:text-light"
@@ -53,26 +53,24 @@ export default function Home() {
         </div>
         <div className="grid md:grid-cols-2 gap-6 md:gap-12 max-w-4xl mx-auto text-left mt-16">
           <h3 className="text-3xl font-semibold">
-            Create subpoenas from just phone numbers
+            Delegate requests to an AI Assistant and be more efficient
           </h3>
           <p className="max-w-lg text-base font-medium text-gray-400 md:text-lg">
-            Check off information being requested, the app automatically
-            determines the carrier/company, address to subpoena, preferred
-            method to serve, provides a template then drafts the subpoena in
-            seconds. Want your own custom template everytime? Train it. Hit
-            download and get the document in PDF.
+            Provide information being requested or tasks to be done, the app does the rest. From
+            looking up phone carrier/company, addresses to subpoenas, drafts, and case discoveries.
+            Want to use your custom draft templates everytime? Train your assistant. PDF, audio inputs and Downloads coming soon.
           </p>
         </div>
         <section className="relative w-full max-w-4xl mx-auto mt-28">
           <div className="w-full grid md:grid-cols-2 gap-6 md:gap-12 text-left items-end my-12">
             <h2 className="text-white text-3xl md:text-5xl font-semibold leading-tight">
               Supercharged by
-              <span className="text-cyan-400 block">ML</span>
+              <span className="text-cyan-400 block">Machine Learning & Natural Language Processing</span>
             </h2>
             <p className="max-w-lg text-base font-medium text-gray-400 md:text-lg">
-              Leverage the power of ML to produce higher quality written
-              subpoenas while freeing up your time. Streamline your drafts and
-              make it that much easier to quickly craft the perfect one.
+              Leverage the power of ML and NLP to produce higher quality tasks / requests
+              while freeing up your time. Streamline your drafts and
+              make it that much easier to quickly get more done.
             </p>
           </div>
           <div className="grid md:grid-cols-4 gap-x-8 gap-y-10 md:gap-0 text-left pt-6">
