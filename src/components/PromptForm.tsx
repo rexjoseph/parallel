@@ -715,7 +715,7 @@ const PromptForm: FC<PromptProps> = ({ apiKey, currentUser }) => {
                                   className="border border-white rounded-full px-4 py-1 text-base font-semibold"
                                   onClick={switchPoena}
                                 >
-                                  Subpoena
+                                  Prompt
                                 </button>
                               </ul>
                             </div>
